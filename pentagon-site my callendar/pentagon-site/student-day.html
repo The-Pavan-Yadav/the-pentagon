@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day | THE HEXAGON</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="student.css" />
+  <link rel="stylesheet" href="student-calendar.css" />
+</head>
+<body class="rs">
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="" /><span>THE HEXAGON</span></a>
+    <nav aria-label="Main">
+      <a href="student-dashboard.html">Dashboard</a>
+      <a href="student-class.html" class="on">My class</a>
+      <a href="#" data-soon>Student network</a>
+      <a href="#" data-soon>Study connect</a>
+    </nav>
+    <div class="nav-av" id="nav-av" aria-hidden="true"></div>
+    <a href="#" class="logout" id="logout">Log out</a>
+  </header>
+
+  <main class="page">
+    <div id="conn" class="conn" hidden></div>
+    <div>
+      <p class="crumb"><a href="student-class.html">My class</a> &rsaquo; <a href="student-calendar.html" id="crumb-cal">My calendar</a> &rsaquo; <span id="crumb-d"></span></p>
+      <div class="ttl">
+        <div class="dnav">
+          <a class="btn ghost sm noprint" id="prevd" href="#" aria-label="Previous day">&lsaquo;</a>
+          <div><h1 id="dtitle"></h1><p class="muted sm" id="dsub"></p></div>
+          <a class="btn ghost sm noprint" id="nextd" href="#" aria-label="Next day">&rsaquo;</a>
+        </div>
+        <div class="noprint" style="display:flex;gap:8px;align-items:center">
+          <span class="sync" id="sync"><i class="sd"></i>Connecting...</span>
+          <a class="btn ghost sm" id="back" href="student-calendar.html"><i class="ti ti-calendar"></i>Back to calendar</a>
+          <button class="btn sm" id="pdf" type="button"><i class="ti ti-file-download"></i>Download day as PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sumrow" id="sum"></div>
+
+    <div class="dwrap">
+      <div class="col2">
+        <section class="card pp-hide"><div class="cardh"><h2>Classes</h2></div><div id="classes"></div></section>
+        <section class="card pp-hide"><div class="cardh"><h2>What was taught: syllabus</h2><span class="muted sm" id="syl-n"></span></div><div id="syllabus"></div></section>
+        <div class="two2 pp-hide">
+          <section class="card" id="hwnote"></section>
+          <section class="card" id="bdnote"></section>
+        </div>
+        <section class="card ai" id="ainote"></section>
+      </div>
+
+      <div class="col2 pp-hide">
+        <section class="card" style="background:var(--lp);border-color:var(--pk)"><div class="side" style="padding:0"><h2>Homework due</h2><div id="homework"></div></div></section>
+        <section class="card noprint"><div class="side" style="padding:0"><h2>Ask a doubt</h2><p class="muted sm" style="margin-bottom:8px">Send a question about today's topics to your teacher.</p>
+          <form id="f-doubt"><textarea name="t" required maxlength="1000" placeholder="Type your doubt..." style="min-height:70px"></textarea><div class="acts"><button class="btn sm" type="submit"><i class="ti ti-send"></i>Ask teacher</button></div></form></div></section>
+        <section class="card noprint" id="revision" style="background:var(--gr);border-color:#d4e6b6"><div class="side" style="padding:0"><h2><i class="ti ti-bell" style="color:#5f7d2e"></i>Revision plan</h2>
+          <p style="font-size:13.5px">Revise today's topics in <b>1 day</b>, <b>3 days</b> and <b>7 days</b> to remember them longer.</p><button class="btn ghost sm" id="remind" type="button" style="margin-top:8px">Set reminders</button></div></section>
+        <section class="card"><div class="side" style="padding:0"><h2>Resources for today</h2><div id="resources"></div></div></section>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="dlg-img"><div id="img-body"></div><div class="acts"><button type="button" class="btn ghost" data-close>Close</button></div></dialog>
+  <dialog id="dlg-cards"><div id="cards-body"></div><div class="acts"><button type="button" class="btn ghost" data-close>Close</button></div></dialog>
+
+  <div id="toast" role="status"></div>
+  <script src="hx-config.js"></script>
+  <script src="hx-api.js"></script>
+  <script src="student-day.js"></script>
+</body>
+</html>

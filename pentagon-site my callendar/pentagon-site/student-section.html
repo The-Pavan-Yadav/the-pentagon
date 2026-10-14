@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My class | THE HEXAGON</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="student.css" />
+  <link rel="stylesheet" href="student-class.css" />
+  <link rel="stylesheet" href="student-pages.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="" /><span>THE HEXAGON</span></a>
+    <nav aria-label="Main">
+      <a href="student-dashboard.html">Dashboard</a>
+      <a href="student-class.html" class="on">My class</a>
+      <a href="#" data-soon>Student network</a>
+      <a href="#" data-soon>Study connect</a>
+    </nav>
+    <div class="nav-av" id="nav-av" aria-hidden="true"></div>
+    <a href="#" class="logout" id="logout">Log out</a>
+  </header>
+
+  <main class="page cls">
+    <p class="crumb"><a href="student-class.html">My class</a> &rsaquo; <span id="crumb"></span></p>
+    <div class="pg-h"><h1 id="pg-title"></h1><p id="pg-desc"></p></div>
+    <nav class="snav" id="snav" aria-label="Class sections"></nav>
+    <div id="sec"></div>
+  </main>
+
+  <div id="toast" role="status"></div>
+  <script src="class-data.js"></script>
+  <script src="student-section.js"></script>
+</body>
+</html>
